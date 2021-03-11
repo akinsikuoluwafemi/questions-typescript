@@ -4,7 +4,7 @@ import React, {FC} from 'react';
 import { AnswerObject } from '../App';
 
 
-
+import { Wrapper, Button } from './QuestionCard.styles';
 
 type Props = {
     question: string;

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import QuestionCard from './components/QuestionCard';
 import { fetchQuizQuestions } from './API';
 
@@ -8,7 +8,7 @@ import { QuestionState, Difficulty } from './API';
 
 const TOTAL_QUESTIONS = 10;
 
-export type AnswerObject = {
+type AnswerObject = {
     question: string;
     answer: string;
     correct: boolean;
@@ -56,21 +56,16 @@ const App =  () =>  {
                 question: questions[number].question,
                 answer,
                 correct,
-                correctAnswer: questions[number].correct_answer
+                
 
             }
-            setUserAnswers((prev) => [...prev, answerObject])
         }
+
 
     }
 
     const nextQuestion = () => {
-        const nextQuestion = number + 1;
-        if (nextQuestion === TOTAL_QUESTIONS) {
-            setGameOver(true);
-        } else {
-            setNumber(nextQuestion)
-        }
+
     }
 
     return (

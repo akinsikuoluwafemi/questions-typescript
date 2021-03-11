@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import QuestionCard from './components/QuestionCard';
 import { fetchQuizQuestions } from './API';
 
@@ -8,7 +8,7 @@ import { QuestionState, Difficulty } from './API';
 
 const TOTAL_QUESTIONS = 10;
 
-export type AnswerObject = {
+type AnswerObject = {
     question: string;
     answer: string;
     correct: boolean;
@@ -61,6 +61,7 @@ const App =  () =>  {
             }
             setUserAnswers((prev) => [...prev, answerObject])
         }
+
 
     }
 
